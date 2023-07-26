@@ -47,6 +47,4 @@ void Worker::sendData()
     qDebug() << "encryptData sending... " << encryptData;
 
     UdpSocket.writeDatagram(encryptData.toUtf8(), QHostAddress::Broadcast, udpPort);
-
-
 }
