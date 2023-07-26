@@ -39,6 +39,8 @@ Worker::Worker(QString _comPort, int _udpPort, QObject *parent)
 
 void Worker::sendData()
 {
+    if( data.isEmpty() ) { return; }
+
     Message message(data);
     auto encryptData = message.encrypt();
 
