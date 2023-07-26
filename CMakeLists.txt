@@ -15,7 +15,9 @@ find_package(Qt5 REQUIRED COMPONENTS Core SerialPort)
 add_executable(COM_TO_UDP
   main.cpp
   worker.cpp
+  message.cpp
   worker.h
+  message.h
 )
 target_link_libraries(COM_TO_UDP Qt5::Core Qt5::SerialPort)
 

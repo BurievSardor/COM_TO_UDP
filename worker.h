@@ -5,6 +5,7 @@
 #include <QSerialPort>
 #include <QDebug>
 #include <QTimer>
+#include "message.h"
 
 class Worker : public QObject
 {

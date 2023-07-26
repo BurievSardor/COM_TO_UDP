@@ -39,6 +39,9 @@ Worker::Worker(QString _comPort, int _udpPort, QObject *parent)
 
 void Worker::sendData()
 {
-    qDebug() << "sending... " << data;
+    Message message(data);
+
+    qDebug() << "sending... " << message.encrypt();
+
     data.clear();
 }
