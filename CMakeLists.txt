@@ -10,7 +10,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 #find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Core)
-find_package(Qt5 REQUIRED COMPONENTS Core SerialPort)
+find_package(Qt5 REQUIRED COMPONENTS Core SerialPort Network)
 
 add_executable(COM_TO_UDP
   main.cpp
@@ -19,7 +19,7 @@ add_executable(COM_TO_UDP
   worker.h
   message.h
 )
-target_link_libraries(COM_TO_UDP Qt5::Core Qt5::SerialPort)
+target_link_libraries(COM_TO_UDP Qt5::Core Qt5::SerialPort Qt5::Network)
 
 install(TARGETS COM_TO_UDP
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})

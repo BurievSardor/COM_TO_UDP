@@ -40,8 +40,13 @@ Worker::Worker(QString _comPort, int _udpPort, QObject *parent)
 void Worker::sendData()
 {
     Message message(data);
-
-    qDebug() << "sending... " << message.encrypt();
+    auto encryptData = message.encrypt();
 
     data.clear();
+
+    qDebug() << "encryptData sending... " << encryptData;
+
+    UdpSocket.writeDatagram(encryptData.toUtf8(), QHostAddress::Broadcast, udpPort);
+
+
 }

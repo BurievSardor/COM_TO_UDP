@@ -5,6 +5,7 @@
 #include <QSerialPort>
 #include <QDebug>
 #include <QTimer>
+#include <QUdpSocket>
 #include "message.h"
 
 class Worker : public QObject
@@ -17,6 +18,7 @@ public:
 private:
     QTimer timer;
     QSerialPort SerialPort;
+    QUdpSocket UdpSocket;
     QString data;
 
     QString comPort;
